@@ -32,7 +32,7 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>nexusRepo</id>
-		    <url>http://13.250.97.116:8081/repository/maru-snapshot//</url>
+		    <url>http://13.250.97.116:8081/repository/sample-snapshots//</url>
 		 </snapshotRepository>
 		
 		<repository>
