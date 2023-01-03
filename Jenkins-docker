@@ -31,7 +31,7 @@ pipeline{
                   ], 
                   credentialsId: 'nexus3', 
                   groupId: 'in.javahome', 
-                  nexusUrl: '172.31.18.217:8081', 
+                  nexusUrl: '172.31.42.20:8081', 
                   nexusVersion: 'nexus3', 
                   protocol: 'http', 
                   repository: 'maru-releases', 
@@ -42,7 +42,7 @@ pipeline{
             steps{
                  sh 'docker build -t maruthi2023/spring-boot-mongo .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name maru2 -p 3900:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name maru44 -p 390:8080 tomcat:${BUILD_NUMBER}'
              }
          }
         stage('Push Docker Image'){
