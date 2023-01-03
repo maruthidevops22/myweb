@@ -40,9 +40,9 @@ pipeline{
             }
         stage('Build Docker Image'){
             steps{
-                 sh 'docker build -t maruthi2023/dev .'
+                 sh 'docker build -t maruthi2023/qa .'
                  sh 'docker build -t tomcat:${BUILD_NUMBER} .'
-                 sh 'docker run -itd --name mahi -p 777:8080 tomcat:${BUILD_NUMBER}'
+                 sh 'docker run -itd --name suresh -p 1817:8080 tomcat:${BUILD_NUMBER}'
              }
          }
         stage('Push Docker Image'){
@@ -50,7 +50,7 @@ pipeline{
                   withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'DOCKER_HUB_CREDENTIALS')]) {
                       sh "docker login -u maruthi2023 -p ${DOCKER_HUB_CREDENTIALS}"
             }
-            sh 'docker push maruthi2023/dev'
+            sh 'docker push maruthi2023/qa'
         }
       }
         
